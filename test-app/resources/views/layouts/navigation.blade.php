@@ -17,10 +17,10 @@
                 <x-nav-link class="text-white" :href="route('dashboard')">
                     {{ __('Update Appliance') }}
                 </x-nav-link>
-                <x-nav-link class="text-white">
+                <x-nav-link class="text-white" :href="route('addAppliance')" :active="request()->routeIs('addAppliance')">
                     {{ __('Add Appliance') }}
                 </x-nav-link>
-                <x-nav-link class="text-white">
+                <x-nav-link class="text-white" :href="route('storage')" :active="request()->routeIs('storage')">
                     {{ __('Storage') }}
                 </x-nav-link>
             </div>

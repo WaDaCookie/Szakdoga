@@ -5,7 +5,7 @@
         </h2>
 
         <p class="mt-1 text-sm text-white">
-            {{ __("Update your account's profile information and email address.") }}
+            {{ __("Update your account's email address.") }}
         </p>
     </header>
 
@@ -17,11 +17,11 @@
         @csrf
         @method('patch')
 
-        <div>
-            <x-input-label class="text-white" for="name" :value="__('Name')" />
-            <x-text-input id="name" name="name" type="text" class="mt-1 block w-full" :value="old('name', $user->name)" required autofocus autocomplete="name" />
-            <x-input-error class="mt-2" :messages="$errors->get('name')" />
-        </div>
+{{--        <div>--}}
+{{--            <x-input-label class="text-white" for="name" :value="__('Name')" />--}}
+{{--            <x-text-input id="name" name="name" type="text" class="mt-1 block w-full" :value="old('name', $user->name)" required autofocus autocomplete="name" />--}}
+{{--            <x-input-error class="mt-2" :messages="$errors->get('name')" />--}}
+{{--        </div>--}}
 
         <div>
             <x-input-label class="text-white" for="email" :value="__('Email')" />

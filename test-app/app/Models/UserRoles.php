@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class userRoles extends Model
+class UserRoles extends Model
 {
     //
 }
