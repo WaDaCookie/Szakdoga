@@ -42,7 +42,7 @@
                                         {{ $room->created_at->format('Y-m-d') }}
                                     </div>
                                     <button class="flex items-center justify-center py-6 pr-6">
-                                        <a href="#" class="bg-orange-500 text-white px-4 py-2 rounded">View Room</a>
+                                        <a href="{{ route('view-room', ['room' => $room->id]) }}" class="bg-orange-500 text-white px-4 py-2 rounded">View Room</a>
                                     </button>
                                 </div>
                             @endforeach

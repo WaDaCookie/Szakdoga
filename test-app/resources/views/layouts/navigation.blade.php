@@ -14,7 +14,7 @@
                 <x-nav-link class="text-white" :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                     {{ __('Dashboard') }}
                 </x-nav-link>
-                <x-nav-link class="text-white" :href="route('dashboard')">
+                <x-nav-link class="text-white" :href="route('updateAppliance')" :active="request()->routeIs('updateAppliance')">
                     {{ __('Update Appliance') }}
                 </x-nav-link>
                 <x-nav-link class="text-white" :href="route('addAppliance')" :active="request()->routeIs('addAppliance')">

@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\AdminRegisterController;
 use App\Http\Controllers\Auth\DashboardController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ApplianceController;
+use App\Http\Controllers\RoomController;
 use App\Http\Middleware\AdminMiddleware;
 use Illuminate\Support\Facades\Route;
 
@@ -21,9 +22,19 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     Route::get('/addAppliance', [ApplianceController::class, 'show'])->name('addAppliance');
+    Route::get('/updateAppliance', [ApplianceController::class, 'update'])->name('updateAppliance');
+    Route::get('/appliance/{id}/edit', [ApplianceController::class, 'edit']);
+    Route::put('/appliance/{id}', [ApplianceController::class, 'updateAppliance'])->name('appliance.update');
+//    Route::get('/appliance/search', [ApplianceController::class, 'searchAppliance'])->name('appliance.search');
+    Route::put('/appliance/{id}', [ApplianceController::class, 'updateEquipment'])->name('appliance.update');
+    Route::get('/appliance/by-type/{equipmentTypeId}', [ApplianceController::class, 'getApplianceByType']);
+    Route::get('/equipment-type/search', [ApplianceController::class, 'searchEquipmentTypes']);
+    Route::put('/equipment-type/{id}', [ApplianceController::class, 'updateApplianceStatus']);
     Route::get('/storage', [ApplianceController::class, 'showStorage'])->name('storage');
     Route::post('/equipments', [ApplianceController::class, 'storeEquipment'])->name('equipment.store');
     Route::post('/equipment-types', [ApplianceController::class, 'storeEquipmentType'])->name('equipmentType.store');
+    Route::get('/view/room/{room}', [RoomController::class, 'viewRoom'])->name('view-room');
+    Route::put('/room/{room}/update-equipments', [RoomController::class, 'updateRoomEquipments'])->name('update-room-equipments');
 
 });
 
