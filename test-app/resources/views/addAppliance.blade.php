@@ -1,6 +1,6 @@
 <x-app-layout>
     <div class="max-w-4xl mx-auto mt-10 p-6 bg-gray-600 shadow-md rounded-lg">
-        <h2 class="text-xl font-semibold mb-4 text-white">Add a Type Number for Equipment</h2>
+        <h2 class="text-xl font-semibold mb-4 text-white">Add an Inventory Number for Equipment</h2>
 
         {{-- Success Message --}}
         @if (session('success'))
@@ -14,9 +14,9 @@
             @csrf
             <div class="mb-4">
                 {{--TODO: change this so i can type into the field--}}
-                <label class="block font-semibold text-white">Select Equipment:</label>
+                <label class="block font-semibold text-white">Select Appliance:</label>
                 <select name="equipment_id" class="w-full p-2 border rounded" required>
-                    <option value="">Select Equipment</option>
+                    <option value="">Select Appliance</option>
                     @foreach ($equipments as $equipment)
                         <option value="{{ $equipment->id }}">
                             {{ $equipment->brand }} - {{ $equipment->name }} ({{ $equipment->type }})
@@ -34,7 +34,7 @@
         </form>
 
         {{-- Add New Equipment --}}
-        <h2 class="text-xl font-semibold mt-6 mb-4 text-white">Add New Equipment</h2>
+        <h2 class="text-xl font-semibold mt-6 mb-4 text-white">Add New Appliance</h2>
         <form action="{{ route('equipment.store') }}" method="POST">
             @csrf
             <div class="mb-4">
@@ -52,7 +52,7 @@
                 <input type="text" name="type" class="w-full p-2 border rounded" required>
             </div>
 
-            <button type="submit" class="bg-orange-500 text-black hover:text-orange-500 border border-orange-500 hover:bg-transparent px-4 py-2 rounded">Add New Equipment</button>
+            <button type="submit" class="bg-orange-500 text-black hover:text-orange-500 border border-orange-500 hover:bg-transparent px-4 py-2 rounded">Add New Appliance</button>
         </form>
     </div>
 </x-app-layout>

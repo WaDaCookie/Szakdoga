@@ -27,12 +27,12 @@
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6">
-                <p class="text-white pr-6">{{ __('David Admin') }}</p>
+                <p class="text-white pr-6">{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</p>
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
                         <button
                             class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-800 bg-orange-500 hover:text-white hover:bg-gray-800 hover:border-orange-500 focus:outline-none transition ease-in-out duration-150">
-                            <div>{{ Auth::user()->name }}</div>
+{{--                            <div>{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</div>--}}
 
                             <div class="ms-1">
                                 <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"

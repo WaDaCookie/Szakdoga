@@ -36,11 +36,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/view/room/{room}', [RoomController::class, 'viewRoom'])->name('view-room');
     Route::put('/room/{room}/update-equipments', [RoomController::class, 'updateRoomEquipments'])->name('update-room-equipments');
 
+    Route::delete('/equipment/{equipment}', [ApplianceController::class, 'destroy'])->name('equipment.destroy');
+
 });
 
 Route::middleware([AdminMiddleware::class])->group(function () {
     Route::get('/admin', [AdminRegisterController::class, 'index'])->name('admin.dashboard');
     Route::get('/register-user', [AdminRegisterController::class, 'create'])->name('register-user');
+    Route::post('/store-user', [AdminRegisterController::class, 'store'])->name('store-user');
 });
 
 

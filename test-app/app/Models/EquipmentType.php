@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class EquipmentType extends Model
 {
     protected $fillable = ['type_number', 'equipment_id', 'status'];
-    public function room()
+    public function room(): BelongsTo
     {
         return $this->belongsTo(Room::class);
     }
