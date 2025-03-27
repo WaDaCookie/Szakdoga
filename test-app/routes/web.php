@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\AdminRegisterController;
 use App\Http\Controllers\Auth\DashboardController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ApplianceController;
+use App\Http\Controllers\QRController;
 use App\Http\Controllers\RoomController;
 use App\Http\Middleware\AdminMiddleware;
 use Illuminate\Support\Facades\Route;
@@ -37,6 +38,9 @@ Route::middleware('auth')->group(function () {
     Route::put('/room/{room}/update-equipments', [RoomController::class, 'updateRoomEquipments'])->name('update-room-equipments');
 
     Route::delete('/equipment/{equipment}', [ApplianceController::class, 'destroy'])->name('equipment.destroy');
+
+    Route::get('/qrcode/{type_id}', [QRController::class, 'generate'])->name('qrcode.generate');
+    Route::get('/qrcode/read/{qrcode}', [QRController::class, 'open'])->name('qrcode.read');
 
 });
 

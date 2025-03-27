@@ -154,6 +154,7 @@ class ApplianceController extends Controller
 
     public function storeEquipmentType(Request $request): RedirectResponse
     {
+        //TODO: after qr code read save the id to the qrcode table
         $request->validate([
             'type_number' => 'required|string|unique:equipment_types,type_number|max:255',
             'equipment_id' => 'required|exists:equipments,id',
